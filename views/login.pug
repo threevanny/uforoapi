@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  section.section
+    .container
+      .columns.is-tablet
+        .column.is-offset-4.is-4.is-offset-4.mt-3
+          .box.has-text-centered
+            h1.title.has-text-centered Iniciar sesión
+            .card-content
+              if errors 
+                for error in errors
+                  small.help.is-danger(role="alert")!= (''!=error ? error : error.msg)
+              form(action='' method='POST')
+                .field
+                  p.control.has-icons-left.has-icons-right
+                    input.input(type='text' name='email' placeholder='example@correounivalle.edu.co' aria-label='email')
+                    span.icon.is-small.is-left
+                      i.fas.fa-user
+                .field
+                  p.control.has-icons-left.has-icons-right
+                    input.input(type='password' name='password' placeholder='contraseña' aria-label='Password')
+                    span.icon.is-small.is-left
+                      i.fa.fa-key.fa-fw
+                .field
+                  p.control
+                    button.button.is-danger.is-fullwidth(type='submit')
+                      | Login                
+                small.help ¿Todavía no tienes una cuenta?
+                  a(href='/register') &nbsp; Registrarse

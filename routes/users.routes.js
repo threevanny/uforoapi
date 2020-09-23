@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+const { renderUsers } = require('../controllers/users.controller');
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Uforo' });
-});
+router.get('/u', renderUsers);
+
 
 module.exports = router;
+
