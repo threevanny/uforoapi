@@ -1,9 +1,9 @@
 .container
-  nav.navbar.is-fixed-top.has-shadow(role='navigation' aria-label='main navigation')
+  nav.navbar.is-fixed-top.has-shadow.is-danger(role='navigation' aria-label='main navigation')
     .container
       .navbar-brand
         a.navbar-item(href='/')
-          img(src='/assets/logo.png' width='80' height='28')
+          img(src='/assets/logo.png' width='112' height='28')
 
         a.navbar-burger.burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarMenu')
           span(aria-hidden='true')
@@ -27,8 +27,8 @@
           a.navbar-item.is-hidden-mobile(href='/login')
             span.icon
               i.fas.fa-sign-in-alt
-            span login
+            span Iniciar Sesión
           a.navbar-item.is-hidden-mobile(href='/register') 
             span.icon
               i.fas.fa-user-plus
-            span register
+            span Registrarse

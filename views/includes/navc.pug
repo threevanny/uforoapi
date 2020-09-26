@@ -1,0 +1,17 @@
+.container
+  nav.navbar.is-fixed-top.has-shadow.is-danger(role='navigation' aria-label='main navigation')
+    .container
+      .navbar-brand
+        a.navbar-item(href='/')
+          img(src='/assets/logo.png' width='112' height='28')
+
+        a.navbar-burger.burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarMenu')
+          span(aria-hidden='true')
+          span(aria-hidden='true')
+          span(aria-hidden='true')
+      #navbarMenu.navbar-menu
+
+        .navbar-end
+          div#result_search.navbar-item.has-dropdown.is-right
+          .control.is-small.navbar-item
+            input#search.input.is-small.is-rounded(type='search' placeholder='Buscar')

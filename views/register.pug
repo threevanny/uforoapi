@@ -1,35 +1,35 @@
 extends layout
 
+block navbar
+  include includes/navc.pug
+
 block content
   section.section
     .container
       .columns
-        .column.is-offset-4.is-4.is-offset-4.mt-3
+        .column.is-offset-4.is-4.is-offset-4.mt-10
           .box.has-text-centered
             h1.title.has-text-centered Registrarse
             .card-content 
-              if errors 
-                for error in errors
-                  small.help.is-danger=(''!=error ? error : error.msg)
               form(action='' method='POST')
                 .field
                   p.control.has-icons-left.has-icons-right
-                    input.input(type='text' name='name' placeholder='Nombre' required='true' value=`${(undefined===username ? '' : username)}`)
+                    input.input(type='text' name='name' placeholder='Nombre' required='true' )
                     span.icon.is-small.is-left
                       i.fas.fa-user
                 .field
                   p.control.has-icons-left.has-icons-right
-                    input.input(type='email' name='email' placeholder='example@correounivalle.edu.co' required='true' value=`${(undefined===email ? '' : email)}`)
+                    input.input(type='email' name='email' placeholder='example@correounivalle.edu.co' required='true')
                     span.icon.is-small.is-left
                       i.fas.fa-envelope
                 .field
                   p.control.has-icons-left.has-icons-right
-                    input.input(type='password' name='password' placeholder='Password' minlength=8 required='true' value=`${(undefined===password ? '' : password)}`)
+                    input.input(type='password' name='password' placeholder='Password' minlength=8 required='true')
                     span.icon.is-small.is-left
                       i.fa.fa-key.fa-fw
                 .field
                   p.control
                     button.button.is-danger.is-fullwidth(type='submit')
-                      | Signup
+                      | Registrarse
                 small.help ¿Ya tienes una cuenta?
                   a(href='/login') &nbsp; Inicia sesíon
