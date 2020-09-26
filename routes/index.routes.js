@@ -5,7 +5,8 @@ const {
   renderIndex,
   renderAbout,
   renderLogin,
-  renderRegister
+  renderRegister,
+  registarUsuario
 } = require('../controllers/index.controller')
 
 
@@ -13,7 +14,9 @@ const {
 /* GET home page. */
 router.get('/', renderIndex);
 router.get('/login', renderLogin);
+
 router.get('/register', renderRegister);
+router.post('/register', registarUsuario);
 router.get('/about', renderAbout);
 
 module.exports = router;
