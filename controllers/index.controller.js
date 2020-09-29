@@ -1,5 +1,5 @@
 const indexCtrl = {};
-const User = require('../models/user');
+const User = require('../models/User');
 
 
 indexCtrl.renderIndex = (req, res,) => {
