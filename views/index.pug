@@ -4,6 +4,12 @@ block navbar
   include includes/nav.pug
 
 block content
+  section.hero.is-medium.has-gb-img
+    .hero-body
+      .container
+        h1.title.has-text-white
+          | Bienvenido a Uforo
+        p.has-text-white Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, fugiat.
   section.section
     .container.mt-5
       .columns
@@ -30,4 +36,6 @@ block content
                   .msg-date
                     i.far.fa-clock
                     small &nbsp;Hace 1 hora
+block footer
+  include includes/footer.pug
 

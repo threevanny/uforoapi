@@ -12,3 +12,9 @@ a {
   -moz-box-shadow: 4px 7px 13px 0px rgba(241, 70, 104, 0.44);
   box-shadow: 4px 7px 13px 0px rgba(241, 70, 104, 0.44);
 }
+
+.has-gb-img {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/img.jpg')center center;
+  background-size: cover;
+  height: 100%;
+}
