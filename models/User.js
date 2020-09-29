@@ -16,8 +16,8 @@ const UserSchema = new Schema({
   },
   edad: { type: String },
   sexo: { type: String },
-  permisos: { type: String },
-  puntos: { type: Number }
+  permisos: { type: String, default: "user" },
+  puntos: { type: Number, default: 100 }
 }, {
   timestamps: true,
   versionKey: false

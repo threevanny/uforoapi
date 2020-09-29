@@ -6,8 +6,9 @@ const {
   renderAbout,
   renderLogin,
   renderRegister,
-  registarUsuario
-} = require('../controllers/index.controller')
+  registarUsuario,
+  renderUsers
+} = require('../controllers/index.controller');
 
 
 
@@ -17,6 +18,7 @@ router.get('/login', renderLogin);
 
 router.get('/register', renderRegister);
 router.post('/register', registarUsuario);
+router.get('/users', renderUsers);
 router.get('/about', renderAbout);
 
 module.exports = router;

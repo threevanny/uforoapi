@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  section.section
+    .columns
+      .column
+        .container
+          .content.has-text-center
+            h1.title Usuarios Registrados
+          table.table.is-narrow.is-hoverable.is-fullwidth
+            thead
+              tr
+                th
+                  span.icon
+                    i.fa-list-ol
+                  small Codigo
+                th
+                  span.icon
+                    i.fas.fa-tags
+                  small Nombre
+                th
+                  span.icon
+                    i.fas.fa-envelope
+                  small Email
+                th
+                  span.icon
+                    i.fas.fa-venus-mars
+                  small Sexo
+                th
+                  span.icon
+                    i.fas.fa-star
+                  small Puntos
+              tbody
+                - var i = 1
+                for val in data
+                  tr
+                    td
+                      small=i++
+                    td
+                      small=val.name
+                    td
+                      small=val.email
+                    td
+                      small=val.sexo
+                    td
+                      small=val.puntos
+
+
+
+

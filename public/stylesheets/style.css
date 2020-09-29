@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+.message:hover {
+  -webkit-box-shadow: 4px 7px 13px 0px rgba(241, 70, 104, 0.44);
+  -moz-box-shadow: 4px 7px 13px 0px rgba(241, 70, 104, 0.44);
+  box-shadow: 4px 7px 13px 0px rgba(241, 70, 104, 0.44);
+}

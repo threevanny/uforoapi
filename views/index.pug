@@ -8,51 +8,26 @@ block content
     .container.mt-5
       .columns
         .column
-
-          article.message
-            .message-body
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              strong Pellentesque risus mi
-              | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
-              a felis venenatis
-              |  efficitur. Aenean ac 
-              em eleifend lacus
-              | , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-          article.message
-            .message-body
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              strong Pellentesque risus mi
-              | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
-              a felis venenatis
-              |  efficitur. Aenean ac 
-              em eleifend lacus
-              | , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-          article.message
-            .message-body
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              strong Pellentesque risus mi
-              | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
-              a felis venenatis
-              |  efficitur. Aenean ac 
-              em eleifend lacus
-              | , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-          article.message
-            .message-body
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              strong Pellentesque risus mi
-              | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
-              a felis venenatis
-              |  efficitur. Aenean ac 
-              em eleifend lacus
-              | , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-          article.message
-            .message-body
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              strong Pellentesque risus mi
-              | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
-              a felis venenatis
-              |  efficitur. Aenean ac 
-              em eleifend lacus
-              | , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-
+          - var values = [1, 1, 1, 1, 1, 1, 1, 1, 1];
+          main
+            each val in values
+              article.message.is-light
+                .message-body
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  strong Pellentesque risus mi
+                  | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+                  a felis venenatis
+                  |  efficitur. Aenean ac 
+                  em eleifend lacus
+                  | , in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                .message-header
+                  .msg-username
+                    i.far.fa-user-circle
+                    small &nbsp;@Usuario
+                  .msg-comments
+                    i.far.fa-comment
+                    small &nbsp;23
+                  .msg-date
+                    i.far.fa-clock
+                    small &nbsp;Hace 1 hora
 

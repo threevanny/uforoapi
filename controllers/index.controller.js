@@ -18,6 +18,7 @@ indexCtrl.renderRegister = (req, res) => {
 indexCtrl.registarUsuario = (req, res) => {
   const dataUser = {
     name: req.body.name,
+    sexo: req.body.sexo,
     email: req.body.email,
     password: req.body.password,
   };
@@ -29,13 +30,19 @@ indexCtrl.registarUsuario = (req, res) => {
     if (error) {
       throw error;
     }
-    res.json({ message: "Data saved successfully.", status: "success" });
+
+    res.redirect('/users');
   });
 }
 
 indexCtrl.renderAbout = (req, res) => {
   res.render('about', { title: 'About' });
 };
+
+indexCtrl.renderUsers = async (req, res) => {
+  const allUsers = await User.find({});
+  res.render('users', { title: "Usuarios", data: allUsers });
+}
 
 
 module.exports = indexCtrl;
