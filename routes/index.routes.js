@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+//obtenemos las funciones del controlador
 const {
   renderIndex,
   renderAbout,
@@ -12,7 +13,7 @@ const {
 
 
 
-/* GET home page. */
+//Rutas principales
 router.get('/', renderIndex);
 router.get('/login', renderLogin);
 
