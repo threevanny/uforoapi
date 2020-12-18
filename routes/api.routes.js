@@ -14,14 +14,16 @@ const {
     getAvatars
 } = require('../controllers/api.controller');
 
-
+//GET
 router.get('/api/v1/user/:id', getUser);
-router.get('/api/v1/users/', getUsers);
+router.get('/api/v1/users', getUsers);
 router.get('/api/v1/question/:id', getQuestion);
-router.get('/api/v1/questions/', getQuestions);
+router.get('/api/v1/questions', getQuestions);
 router.get('/api/v1/reply/:id', getReply);
-router.get('/api/v1/replies/', getReplies);
+router.get('/api/v1/replies', getReplies);
 router.get('/api/v1/avatar/:id', getAvatar);
-router.get('/api/v1/avatars/', getAvatars);
+router.get('/api/v1/avatars', getAvatars);
+
+//POST
 
 module.exports = router;

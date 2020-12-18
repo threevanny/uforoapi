@@ -5,11 +5,11 @@ const Reply = require('../models/Reply');
 const Avatar = require('../models/Avatar');
 
 apiCtrl.getUser = (req, res,) => {
-    //...
+    res.send("Hola")
 };
 
 apiCtrl.getUsers = (req, res,) => {
-    //..
+    res.send("Hola")
 };
 
 apiCtrl.getQuestion = (req, res,) => {
