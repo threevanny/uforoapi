@@ -14,10 +14,12 @@ const UserSchema = new Schema({
     type: String,
     required: [true, 'Password requerida.']
   },
-  edad: { type: String },
-  sexo: { type: String },
-  permisos: { type: String, default: "user" },
-  puntos: { type: Number, default: 100 }
+  avatar: { type: String },
+  location: { type: String },
+  birthdate: { type: String },
+  gender: { type: String },
+  permission: { type: String, default: "user" },
+  ponits: { type: Number, default: 100 }
 }, {
   timestamps: true,
   versionKey: false
