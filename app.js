@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
 });
 
 //database
-//require('./database');
+require('./database');
 
 // error handler
 app.use(function(err, req, res, next) {
