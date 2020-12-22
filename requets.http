@@ -1,0 +1,35 @@
+@api = http://localhost:3000/api/v1
+
+
+### GET a user by ID
+GET {{api}}/user/12
+
+
+### GET get all users
+GET {{api}}/users/
+
+
+### POST create user
+POST {{api}}/user/new
+Content-Type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@correounivalle.edu.co",
+    "password": "12345678"
+}
+
+
+### PUT  update user
+PUT {{api}}/user/update/1
+Content-Type: application/json
+
+{
+     "name": "my new name",
+    "email": "newEmail@correounivalle.edu.co",
+    "password": "12345678"
+}
+
+
+### DELETE delete user
+DELETE {{api}}/user/delete/1

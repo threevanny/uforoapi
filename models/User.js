@@ -1,28 +1,28 @@
 const { Schema, model } = require('mongoose');
 
 const UserSchema = new Schema({
-  name: {
-    type: String,
-    required: [true, 'Nombre de usuario requerido.']
-  },
-  email: {
-    type: String, required: 'Email requerido',
-    match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Digita un email valido.'],
-    index: { unique: true, dropDups: true }
-  },
-  password: {
-    type: String,
-    required: [true, 'Password requerida.']
-  },
-  avatar: { type: String },
-  location: { type: String },
-  birthdate: { type: String },
-  gender: { type: String },
-  permission: { type: String, default: "user" },
-  ponits: { type: Number, default: 100 }
+    name: {
+        type: String,
+        required: [true, 'A name is required.']
+    },
+    email: {
+        type: String,
+        required: [true, 'A email is required'],
+        index: { unique: true, dropDups: true }
+    },
+    password: {
+        type: String,
+        required: [true, 'A email is required']
+    },
+    avatar: { type: String },
+    location: { type: String },
+    birthdate: { type: String },
+    gender: { type: String },
+    permission: { Number: String },
+    ponits: { type: Number }
 }, {
-  timestamps: true,
-  versionKey: false
+    timestamps: true,
+    versionKey: false
 });
 
 module.exports = model('User', UserSchema);
