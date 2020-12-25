@@ -33,3 +33,15 @@ Content-Type: application/json
 
 ### DELETE delete user
 DELETE {{api}}/user/delete/1
+
+
+
+### Create Question
+POST {{api}}/question/new/
+Content-Type: application/json
+
+{
+    "idAutor": "12345678",
+    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    "tag": "Math"
+}
