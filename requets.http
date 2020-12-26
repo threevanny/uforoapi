@@ -1,5 +1,7 @@
 @api = http://localhost:3000/api/v1
 
+//**********USER REQUEST**********
+
 
 ### GET a user by ID
 GET {{api}}/user/12
@@ -34,6 +36,15 @@ Content-Type: application/json
 ### DELETE delete user
 DELETE {{api}}/user/delete/1
 
+//**********QUESTION REQUEST**********
+
+
+### GET a question by ID
+GET {{api}}/question/#id
+
+
+### GET  multiple questions
+GET {{api}}/questions/
 
 
 ### Create Question
@@ -45,3 +56,17 @@ Content-Type: application/json
     "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
     "tag": "Math"
 }
+
+
+### Update Question
+PUT {{api}}/question/update/5fe7b7b8e5ba032e54807d9d
+Content-Type: application/json
+
+{
+    "question": "I am updating a Question. ok?",
+    "tag": "Something"
+}
+
+
+### DELETE question
+DELETE {{api}}/question/delete/5fe7b5c8642bde2ce1b181fc

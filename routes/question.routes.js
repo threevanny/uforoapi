@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 const {
@@ -6,14 +6,14 @@ const {
     getQuestions,
     newQuestion,
     updateQuestion,
-    deleteQuestion
-} = require('../controllers/question.controller')
+    deleteQuestion,
+} = require("../controllers/question.controller");
 
-router.get('/api/v1/question/:id', getQuestion);
-router.get('/api/v1/questions', getQuestions);
+router.get("/api/v1/question/:id", getQuestion);
+router.get("/api/v1/questions", getQuestions);
 
-router.post('/api/v1/question/new/', newQuestion);
-router.post('/api/v1/question/update/:id', updateQuestion);
-router.post('/api/v1/question/delete/:id', deleteQuestion);
+router.post("/api/v1/question/new/", newQuestion);
+router.put("/api/v1/question/update/:id", updateQuestion);
+router.delete("/api/v1/question/delete/:id", deleteQuestion);
 
 module.exports = router;
