@@ -4,21 +4,24 @@ const Question = require("../models/Question");
 
 questionCtrl.getQuestion = async(req, res) => {
     const id = req.params.id;
-    const aQuestion = await Question.findById(id);
 
-    res.json(aQuestion);
+    await Question.findById(id, (err, docs) => {
+        if (err) console.error("Error getting question!", err);
+        else res.json(docs);
+    });
 };
 
 questionCtrl.getQuestions = async(_, res) => {
-    const limit = 4;
-    const allQuestions = await Question.find({}).limit(limit);
+    const limit = 300;
 
-    res.json(allQuestions);
+    await Question.find({}, (err, docs) => {
+        if (err) console.error("Error getting questions!", err);
+        else res.json(docs);
+    }).limit(limit);
 };
 
 questionCtrl.newQuestion = async(req, res) => {
-    //Before saving validate data.
-
+    //validate data after to save
     const newQuestion = new Question({
         idAutor: req.body.idAutor,
         question: req.body.question,
@@ -26,7 +29,7 @@ questionCtrl.newQuestion = async(req, res) => {
     });
 
     await newQuestion.save((err) => {
-        if (err) console.error("Error saving question!");
+        if (err) console.error("Error saving question!", err);
         else
             res.json({
                 status: "OK",
@@ -44,7 +47,7 @@ questionCtrl.updateQuestion = async(req, res) => {
     };
 
     await Question.findByIdAndUpdate(id, updatedQuestion, (err, docs) => {
-        if (err) console.error("Error updating question!");
+        if (err) console.error("Error updating question!", err);
         else
             res.json({
                 status: "OK",
@@ -57,7 +60,7 @@ questionCtrl.updateQuestion = async(req, res) => {
 questionCtrl.deleteQuestion = async(req, res) => {
     const id = req.params.id;
     await Question.findByIdAndDelete(id, (err, docs) => {
-        if (err) console.error("Error deleting question!");
+        if (err) console.error("Error deleting question!", err);
         else
             res.json({
                 status: "OK",

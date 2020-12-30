@@ -1,0 +1,33 @@
+@api = http://localhost:3000/api/v1
+
+### GET a question by ID
+GET {{api}}/question/#id
+
+
+### GET  multiple questions
+GET {{api}}/questions/
+
+
+### Create Question
+POST {{api}}/question/new/
+Content-Type: application/json
+
+{
+    "idAutor": "12345678",
+    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?",
+    "tag": "Math"
+}
+
+
+### Update Question
+PUT {{api}}/question/update/#id
+Content-Type: application/json
+
+{
+    "question": "I am updating a Question. ok?",
+    "tag": "Something"
+}
+
+
+### DELETE question
+DELETE {{api}}/question/delete/#id
