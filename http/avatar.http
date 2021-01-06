@@ -1,0 +1,34 @@
+@api = http://localhost:3000/api/v1
+
+### GET a avatar by ID
+GET {{api}}/avatar/#id
+
+
+### GET  multiple avatars
+GET {{api}}/avatars/
+
+
+### Create Question
+POST {{api}}/avatar/new/
+Content-Type: application/json
+
+{
+    "name": "algo",
+    "url": "url.com",
+    "description": "jnakjndjkad"
+}
+
+
+### Update Question
+PUT {{api}}/avatar/update/#id
+Content-Type: application/json
+
+{
+    "name": "algo tambie",
+    "url": "url.com",
+    "description": "Ma;sabsiuabth"
+}
+
+
+### DELETE avatar
+DELETE {{api}}/avatar/delete/#id

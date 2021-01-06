@@ -1,7 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 const AvatarSchema = new Schema({
-    urlAvatar: { type: String },
+    name: { type: String },
+    url: { type: String },
     description: { type: String }
 }, {
     timestamps: true,
