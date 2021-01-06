@@ -8,7 +8,7 @@ GET {{api}}/avatar/#id
 GET {{api}}/avatars/
 
 
-### Create Question
+### Create Avatar
 POST {{api}}/avatar/new/
 Content-Type: application/json
 
@@ -19,14 +19,14 @@ Content-Type: application/json
 }
 
 
-### Update Question
+### Update Avatar
 PUT {{api}}/avatar/update/#id
 Content-Type: application/json
 
 {
     "name": "algo tambie",
-    "url": "url.com",
-    "description": "Ma;sabsiuabth"
+    "url": "otraurl.com",
+    "description": "otra desc"
 }
 
 

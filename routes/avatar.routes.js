@@ -13,7 +13,7 @@ router.get('/api/v1/avatar/:id', getAvatar);
 router.get('/api/v1/avatars', getAvatars);
 
 router.post('/api/v1/avatar/new', newAvatar);
-router.post('/api/v1/avatar/update/:id', updateAvatar);
-router.post('/api/v1/avatar/delete/:id', deleteAvatar);
+router.put('/api/v1/avatar/update/:id', updateAvatar);
+router.delete('/api/v1/avatar/delete/:id', deleteAvatar);
 
 module.exports = router;
