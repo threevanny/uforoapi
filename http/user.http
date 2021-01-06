@@ -1,7 +1,7 @@
 @api = http://localhost:3000/api/v1
 
 ### GET a user by ID
-GET {{api}}/user/12
+GET {{api}}/user/#id
 
 
 ### GET get all users
@@ -15,20 +15,22 @@ Content-Type: application/json
 {
     "name": "admin",
     "email": "admin@correounivalle.edu.co",
-    "password": "12345678"
+    "password": "12345678",
+    "location": "Cali Valle del Cauca"
 }
 
 
 ### PUT  update user
-PUT {{api}}/user/update/1
+PUT {{api}}/user/update/#id
 Content-Type: application/json
 
 {
      "name": "my new name",
     "email": "newEmail@correounivalle.edu.co",
-    "password": "12345678"
+    "password": "12345678",
+    "location": "Cali Valle del Cauca"
 }
 
 
 ### DELETE delete user
-DELETE {{api}}/user/delete/1
+DELETE {{api}}/user/delete/#id
