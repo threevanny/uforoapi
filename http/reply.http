@@ -1,0 +1,30 @@
+@api = http://localhost:3000/api/v1
+
+### GET a reply by ID
+GET {{api}}/reply/#id
+
+
+### GET  multiple replys
+GET {{api}}/replies/
+
+
+### Create Reply
+POST {{api}}/reply/new/
+Content-Type: application/json
+
+{
+   "reply": "I am creating a new Reply. ok?"
+}
+
+
+### Update Reply
+PUT {{api}}/reply/update/#id
+Content-Type: application/json
+
+{
+    "reply": "Este es un nuevo Reply"
+}
+
+
+### DELETE reply
+DELETE {{api}}/reply/delete/#id
