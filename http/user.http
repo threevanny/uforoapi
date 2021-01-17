@@ -1,24 +1,34 @@
 @api = http://localhost:3000/api/v1
 
 ### GET a user by ID
-GET {{api}}/user/#id
+GET {{api}}/user/60020f838753172a6de6b52a
 
 
 ### GET get all users
 GET {{api}}/users/
 
 
-### POST create user
-POST {{api}}/user/new
+### SIGNUP
+POST {{api}}/user/signup
 Content-Type: application/json
 
 {
-    "name": "admin",
-    "email": "admin@correounivalle.edu.co",
-    "password": "12345678",
-    "location": "Cali Valle del Cauca"
+    "name": "Rayo McQueen",
+    "email": "rayo.maqueen@correounivalle.edu.co",
+    "password": "12345678"
 }
 
+### LOGIN
+POST {{api}}/user/login
+Content-Type: application/json
+
+{
+    "email": "rayo.maqueen@correounivalle.edu.co",
+    "password": "12345678"
+}
+
+### LOGOUT
+POST {{api}}/user/logout
 
 ### PUT  update user
 PUT {{api}}/user/update/#id
