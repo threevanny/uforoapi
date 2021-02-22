@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+//require('dotenv').config();
 
 const monogDB_Local_URI = 'mongodb://localhost/uforo'
 const mongoDB_URI = process.env.MONGODB_URI || monogDB_Local_URI;
