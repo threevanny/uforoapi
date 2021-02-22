@@ -38,7 +38,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', indexRouter);
+app.use(indexRouter);
 app.use(userRouter);
 app.use(quetionRouter);
 app.use(replyRouter);
