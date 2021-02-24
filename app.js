@@ -4,20 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const logger = require('morgan');
-const passport = require('passport');
 const cors = require('cors');
 
-const indexRouter = require('./routes/index.routes');
-const userRouter = require('./routes/user.routes');
-const quetionRouter = require('./routes/question.routes');
-const replyRouter = require('./routes/reply.routes');
-const avatarRouter = require('./routes/avatar.routes');
-const authRouter = require('./routes/auth.routes');
-
 const app = express();
-
-//passport config:
-require('./auth/passport')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,8 +26,13 @@ app.use(session({
     cookie: { secure: true }
 }))
 
-app.use(passport.initialize());
-app.use(passport.session());
+//Routes
+const indexRouter = require('./routes/index.routes');
+const userRouter = require('./routes/user.routes');
+const quetionRouter = require('./routes/question.routes');
+const replyRouter = require('./routes/reply.routes');
+const avatarRouter = require('./routes/avatar.routes');
+const authRouter = require('./routes/auth.routes');
 
 app.use(indexRouter);
 app.use(userRouter);
