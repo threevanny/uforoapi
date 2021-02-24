@@ -18,7 +18,7 @@ $ npm install
 Start a MongoDB server and run uforoAPI. To install MongoDB visit [official documentation of mongoDB](https://docs.mongodb.com/manual/installation/).
 
 ```bash
-$ npm run devstart
+$ npm run start:dev
 ```
 
 Open your web browser and navigate to [localhost:3000](http://localhost:3000/)
