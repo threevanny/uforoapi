@@ -1,16 +1,11 @@
-const mongoose = require('mongoose');
-//require('dotenv').config();
+const mongoose = require('mongoose')
+const config = require('./config/config').get(process.env.NODE_ENV)
 
-const monogDB_Local_URI = 'mongodb://localhost/uforo'
-const mongoDB_URI = process.env.MONGODB_URI || monogDB_Local_URI;
-
-mongoose.connect(mongoDB_URI, {
+mongoose.Promise = global.Promise
+mongoose.connect(config.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false
-}).then(() => {
-    return console.log("Connection DB established");
-}).catch(err => {
-    return console.log(err);
-});
+}).then(() => console.log('Connection DB established')
+).catch(err => console.log(err))

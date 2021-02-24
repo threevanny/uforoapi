@@ -1,7 +1,7 @@
 @api = http://localhost:3000/api/v1
 
 ### GET a user by ID
-GET {{api}}/user/60020f838753172a6de6b52a
+GET {{api}}/user/6036b2bee7470b2978293db1
 
 
 ### GET get all users
@@ -9,17 +9,18 @@ GET {{api}}/users/
 
 
 ### SIGNUP
-POST {{api}}/user/signup
+POST {{api}}/auth/signup
 Content-Type: application/json
 
 {
     "name": "Rayo McQueen",
     "email": "rayo.maqueen@correounivalle.edu.co",
-    "password": "12345678"
+    "password": "12345678",
+    "password2": "12345678"
 }
 
 ### LOGIN
-POST {{api}}/user/login
+POST {{api}}/auth/login
 Content-Type: application/json
 
 {
@@ -28,10 +29,15 @@ Content-Type: application/json
 }
 
 ### LOGOUT
-POST {{api}}/user/logout
+GET {{api}}/auth/logout
+
+
+### PROFILE
+GET {{api}}/auth/profile
+
 
 ### PUT  update user
-PUT {{api}}/user/update/#id
+PUT {{api}}/auth/update/#id
 Content-Type: application/json
 
 {
