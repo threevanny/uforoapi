@@ -33,7 +33,7 @@ GET {{api}}/auth/logout
 
 
 ### PROFILE
-GET {{api}}/auth/profile
+POST {{api}}/auth/profile
 
 
 ### PUT  update user

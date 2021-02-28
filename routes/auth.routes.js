@@ -11,7 +11,7 @@ const {
 
 router.post('/api/v1/auth/signup', signup);
 router.post('/api/v1/auth/login', login);
-router.get('/api/v1/auth/logout', auth, logout);
-router.get('/api/v1/auth/profile', auth, goToProfile);
+router.post('/api/v1/auth/logout', auth, logout);
+router.post('/api/v1/auth/profile', auth, goToProfile);
 
 module.exports = router;
