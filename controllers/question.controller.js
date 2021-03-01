@@ -2,7 +2,7 @@ const questionCtrl = {};
 
 const Question = require("../models/Question");
 
-questionCtrl.getQuestion = async(req, res) => {
+questionCtrl.getQuestion = async (req, res) => {
     const id = req.params.id;
 
     await Question.findById(id, (err, docs) => {
@@ -11,16 +11,16 @@ questionCtrl.getQuestion = async(req, res) => {
     });
 };
 
-questionCtrl.getQuestions = async(_, res) => {
-    const limit = 300;
+questionCtrl.getQuestions = async (_, res) => {
+    const limit = 20;
 
     await Question.find({}, (err, docs) => {
         if (err) console.error("Error getting questions!", err);
         else res.json(docs);
-    }).limit(limit);
+    }).limit(limit).sort({ "createdAt": "desc" });
 };
 
-questionCtrl.newQuestion = async(req, res) => {
+questionCtrl.newQuestion = async (req, res) => {
     //validate data after to save
     const newQuestion = new Question({
         idAutor: req.body.idAutor,
@@ -32,13 +32,13 @@ questionCtrl.newQuestion = async(req, res) => {
         if (err) console.error("Error saving question!", err);
         else
             res.json({
-                status: "OK",
+                OK: true,
                 message: "Question has been created",
             });
     });
 };
 
-questionCtrl.updateQuestion = async(req, res) => {
+questionCtrl.updateQuestion = async (req, res) => {
     const id = req.params.id;
 
     const updatedQuestion = {
@@ -50,14 +50,14 @@ questionCtrl.updateQuestion = async(req, res) => {
         if (err) console.error("Error updating question!", err);
         else
             res.json({
-                status: "OK",
+                OK: true,
                 message: "Question has been updated",
                 data: docs,
             });
     });
 };
 
-questionCtrl.deleteQuestion = async(req, res) => {
+questionCtrl.deleteQuestion = async (req, res) => {
     const id = req.params.id;
     await Question.findByIdAndDelete(id, (err, docs) => {
         if (err) console.error("Error deleting question!", err);

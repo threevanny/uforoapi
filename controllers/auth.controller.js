@@ -2,10 +2,21 @@ const User = require('../models/User')
 
 const authCtrl = {}
 
+let avatars = [
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fclipart-car-lightning-mcqueen-13.png&f=1&nofb=1",
+    "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg3.wikia.nocookie.net%2F__cb20150112020320%2Fpixar%2Fimages%2F3%2F35%2F77465-Francesco-Bernoulli-Cars-2.jpg&f=1&nofb=1",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fpixar%2Fimages%2Fe%2Fe1%2FTowMaterCars3Artwork.jpg%2Frevision%2Flatest%3Fcb%3D20170430135416&f=1&nofb=1",
+]
+
+const getAvatar = (array) => {
+    let random = Math.round(Math.random() * (2))
+    return array[random];
+}
+
 authCtrl.signup = (req, res) => {
     console.log(req.body)
     const newuser = new User(req.body)
-    newuser.avatar = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fclipart-car-lightning-mcqueen-13.png&f=1&nofb=1"
+    newuser.avatar = getAvatar(avatars)
     newuser.points = 200
     console.log(newuser)
     if (newuser.password != newuser.password2) return res.status(400).json({ message: "password not match" })
