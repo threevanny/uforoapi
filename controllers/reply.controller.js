@@ -12,25 +12,28 @@ replyCtrl.getReply = async (req, res,) => {
 };
 
 replyCtrl.getReplies = async (req, res,) => {
+    const idQuestion = req.params.id;
     const limit = 10;
 
-    await Reply.find({}, (err, docs) => {
+    await Reply.find({ idQuestion }, (err, docs) => {
         if (err) console.error("Error getting reply!", err);
         else res.json(docs);
     }).limit(limit);
 };
 
 replyCtrl.newReply = async (req, res,) => {
+    console.log(res.body)
     const newReply = new Reply({
+        idAutor: req.body.idAutor,
+        idQuestion: req.body.idQuestion,
         reply: req.body.reply
-
     });
     await newReply.save((err) => {
         if (err) console.error("Error saving reply!", err);
         else
             res.json({
-                status: "OK",
-                message: "Reply has been created",
+                isOk: true,
+                message: `Reply with id ${newReply._id} has been created`,
             });
     });
 };

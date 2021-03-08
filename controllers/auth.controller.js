@@ -57,6 +57,7 @@ authCtrl.login = (req, res) => {
                         if (err) return res.status(400).send(err)
                         res.cookie('auth', user.token).json({
                             isAuth: true,
+                            id: user._id,
                             token: user.token,
                         })
                     })
