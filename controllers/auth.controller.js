@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const Question = require('../models/Question')
 
 const authCtrl = {}
 
@@ -68,14 +69,29 @@ authCtrl.login = (req, res) => {
 }
 
 authCtrl.goToProfile = (req, res) => {
-    res.json({
-        // isAuth: true,
-        id: req.user._id,
-        name: req.user.name,
-        avatar: req.user.avatar,
-        email: req.user.email,
-        location: req.user.location,
-        points: req.user.points
+    Question.countDocuments({ idAutor: req.user._id }, (err, docs) => {
+        if (err) {
+            res.json({
+                // isAuth: true,
+                id: req.user._id,
+                name: req.user.name,
+                avatar: req.user.avatar,
+                email: req.user.email,
+                location: req.user.location,
+                points: req.user.points
+            })
+        } else {
+            res.json({
+                // isAuth: true,
+                id: req.user._id,
+                name: req.user.name,
+                avatar: req.user.avatar,
+                email: req.user.email,
+                location: req.user.location,
+                points: req.user.points,
+                questions: docs
+            })
+        }
     })
 }
 

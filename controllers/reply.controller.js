@@ -13,12 +13,21 @@ replyCtrl.getReply = async (req, res,) => {
 
 replyCtrl.getReplies = async (req, res,) => {
     const idQuestion = req.params.id;
-    const limit = 10;
+    const limit = 20;
 
     await Reply.find({ idQuestion }, (err, docs) => {
         if (err) console.error("Error getting reply!", err);
         else res.json(docs);
     }).limit(limit);
+};
+
+replyCtrl.getCountReplies = async (req, res,) => {
+    const idQuestion = req.params.id;
+
+    await Reply.countDocuments({ idQuestion }, (err, docs) => {
+        if (err) console.error("Error getting reply!", err);
+        else res.json(docs);
+    })
 };
 
 replyCtrl.newReply = async (req, res,) => {

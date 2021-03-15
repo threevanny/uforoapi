@@ -4,6 +4,7 @@ const router = express.Router();
 const {
     getReply,
     getReplies,
+    getCountReplies,
     newReply,
     updateReply,
     deleteReply
@@ -11,6 +12,7 @@ const {
 
 router.get('/api/v1/reply/:id', getReply);
 router.get('/api/v1/replies/:id', getReplies);
+router.get('/api/v1/replies/count/:id', getCountReplies)
 
 router.post('/api/v1/reply/new/', newReply);
 router.put('/api/v1/reply/update/:id', updateReply);
